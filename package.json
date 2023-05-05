@@ -1,0 +1,62 @@
+{
+  "name": "rent_increase_fast_api",
+  "version": "1.0.0",
+  "description": "This is a version of my previous app using FastAPI instead of flask",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasmusdriving/fast_rent_increase.git"
+  },
+  "keywords": [
+    "fastapi",
+    "electron",
+    "rent",
+    "increase"
+  ],
+  "author": "Rasmus Driving",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rasmusdriving/fast_rent_increase"
+  },
+  "homepage": "https://github.com/rasmusdriving/fast_rent_increase#readme",
+  "devDependencies": {
+    "electron": "^24.2.0",
+    "electron-builder": "^22.14.13",
+    "electron-packager": "^17.1.1"
+  },
+  "dependencies": {
+    "electron-updater": "^5.3.0"
+  },
+  "build": {
+    "appId": "com.rasmusdriving.rentincrease",
+    "productName": "RentIncreaseApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "fast-rent-increase",
+      "owner": "rasmusdriving",
+      "private": false
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.finance"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
